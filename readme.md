@@ -103,7 +103,7 @@ password : root
  
  docker-compose up
  
-    mvn spring-boot:run -Dspring-boot.run.profiles=mysql
+./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
 
 
 
