@@ -1,6 +1,6 @@
 # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?editor=code-latest#https://github.com/trinityzhub/learn-spring)
 
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
@@ -64,6 +64,51 @@ docker run -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES
 
 Further documentation is provided for [MySQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt)
 and for [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/postgres/petclinic_db_setup_postgres.txt).
+
+
+
+
+
+
+
+## Docker Steps (usefull)
+
+```
+docker ps
+
+docker logs naughty_mccarthy --follow
+
+docker stop naughty_mccarthy
+
+docker exec -it dazzling_hertz mysql -p
+password : root
+
+
+
+_docker run --name mysql -d \
+    -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=change-me \
+    --restart unless-stopped \
+    mysql:8
+
+
+
+docker run --name mysql_cont -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
+
+docker exec -it mysql_cont mysql -p
+
+password : root
+
+ docker exec -it [container_name] bash
+ 
+ docker-compose up
+ 
+./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+
+
+
+```
+
 
 ## Compiling the CSS
 
