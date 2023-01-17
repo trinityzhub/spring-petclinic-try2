@@ -79,9 +79,15 @@ docker logs naughty_mccarthy --follow
 
 docker stop naughty_mccarthy
 
+_docker run --name mysql -d \
+    -p 3306:3306 \
+    -e MYSQL_ROOT_PASSWORD=change-me \
+    --restart unless-stopped \
+    mysql:8
 
+docker run  -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
 
-
+docker exec -it mysql mysql -p
 
 
 
