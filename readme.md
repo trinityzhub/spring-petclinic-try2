@@ -73,6 +73,7 @@ and for [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/ma
 
 ## Docker Steps (usefull)
 
+```
 docker ps
 
 docker logs naughty_mccarthy --follow
@@ -90,12 +91,17 @@ _docker run --name mysql -d \
     --restart unless-stopped \
     mysql:8
 
+
+
 docker run --name mysql_cont -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
+
 docker exec -it mysql_cont mysql -p
+
 password : root
 
  docker exec -it [container_name] bash
  
+```
 
 
 ## Compiling the CSS
