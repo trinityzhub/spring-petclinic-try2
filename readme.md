@@ -101,6 +101,12 @@ password : root
 
  docker exec -it [container_name] bash
  
+ docker-compose up
+ 
+    mvn spring-boot:run -Dspring-boot.run.profiles=mysql
+
+
+
 ```
 
 
