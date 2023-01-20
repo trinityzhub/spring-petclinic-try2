@@ -1,0 +1,21 @@
+
+find /workspace/learn-spring -type md -print
+
+ls -lDR *.md | grep ':$' | head
+
+
+./mvnw package
+ ./mvnw -B package
+
+
+// Enable Docker in IDE
+./mvnw spring-boot:build-image
+
+./mvnw   spring-boot:run -Dspring-boot.run.profiles=mysql
+
+ 
+docker login
+
+docker push trinity0091/petclinic_try:
+
+
