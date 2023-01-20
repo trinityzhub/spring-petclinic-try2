@@ -36,8 +36,54 @@ docker push trinity0091/spring-petclinic-try:latest
 docker push trinity0091/spring-petclinic-try:3.1.1-SNAPSHOT
 
 
+docker  build -t trinity0091/spring-petclinic-try:3.1.1-SNAPSHOT
+
+docker  build -t trinity0091/spring-petclinic-try:3.1.1-SNAPSHOT .
 
 
-docker build -t spring-petclinic-try:3.1.1-SNAPSHOT .
+./mvnw compile com.google.cloud.tools:jib-maven-plugin:2.3.0:dockerBuild
+
+
+docker run -p 8080:8080 -t spring-petclinic-try:3.1.1-SNAPSHOT
+
+./mvnw compile com.google.cloud.tools:jib-maven-plugin:2.3.0:dockerBuild
+
+docker build  -t petclinic-try:v1 .
+
+./mvnw spring-boot:build-image
+
+./mvnw  compile jib:build -Dimage=trinity0091/spring-petclinic-try:3.1.1-SNAPSHOT 
+
+
+
+./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=trinity0091/spring-petclinic-try:3.1.1-SNAPSHOT
+
+
+
+
+./gradlew bootBuildImage --imageName=petclinic-try
+
+docker run -it -p8080:8080 petclinic-try
+
+
+
+
+
+
+
+
+
+
+// docker image 
+// boot
+// working 
+./gradlew bootBuildImage --imageName=petclinic-try --builder trinity0091/spring-petclinic-try
+
+docker run -it -p8080:8080 petclinic-tryoc
+
+docker push trinity0091/petclinic-try:latest
+
+
+docker image tag petclinic-try:latest trinity0091/petclinic-try:latest
 
 
