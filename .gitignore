@@ -15,3 +15,11 @@ build/*
 _site/
 *.css
 !petclinic.css
+
+#  Consider in gitpod.io but not condider in other ide (github) # not tested
+#  vscode-remote config make issues b/w ide
+.devcontainer/devcontainer.json
+!/workspace/learn-spring/.devcontainer/devcontainer.json
+.devcontainer/Dockerfile
+!/workspace/learn-spring/.devcontainer/Dockerfile
+
