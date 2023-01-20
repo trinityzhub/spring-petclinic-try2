@@ -18,6 +18,7 @@ _site/
 
 #  Consider in gitpod.io but not condider in other ide (github) # not tested
 #  vscode-remote config make issues b/w ide
+# How To do : add relative path in ignore list, override by realpath in ignorelist
 .devcontainer/devcontainer.json
 !/workspace/learn-spring/.devcontainer/devcontainer.json
 .devcontainer/Dockerfile
