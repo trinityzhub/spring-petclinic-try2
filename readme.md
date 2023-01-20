@@ -82,6 +82,12 @@ and for [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/ma
 
 docker ps
 
+
+docker container ls --all
+
+
+
+
 docker logs naughty_mccarthy --follow
 
 docker stop naughty_mccarthy
@@ -97,10 +103,16 @@ _docker run --name mysql -d \
     --restart unless-stopped \
     mysql:8
 
-
+// To create container  container from image and run it
 
 docker run --name mysql_cont -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
 
+OR
+// To start docker container from image
+docker start mysql_cont
+
+
+// exec running container
 docker exec -it mysql_cont mysql -p
 
 password : root
