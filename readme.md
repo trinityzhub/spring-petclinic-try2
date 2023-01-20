@@ -74,6 +74,12 @@ and for [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/ma
 ## Docker Steps (usefull)
 
 ```
+
+
+// enable docker
+./mvnw spring-boot:build-image
+
+
 docker ps
 
 docker logs naughty_mccarthy --follow
