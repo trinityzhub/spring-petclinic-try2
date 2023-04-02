@@ -66,69 +66,6 @@ docker run -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES
 Further documentation is provided for [MySQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt)
 and for [PostgreSQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/postgres/petclinic_db_setup_postgres.txt).
 
-
-
-
-
-
-
-## Docker Steps (usefull)
-
-```
-
-
-// enable docker
-./mvnw spring-boot:build-image
-
-
-docker ps
-
-
-docker container ls --all
-
-
-
-
-docker logs naughty_mccarthy --follow
-
-docker stop naughty_mccarthy
-
-docker exec -it dazzling_hertz mysql -p
-password : root
-
-
-
-_docker run --name mysql -d \
-    -p 3306:3306 \
-    -e MYSQL_ROOT_PASSWORD=change-me \
-    --restart unless-stopped \
-    mysql:8
-
-// To create container  container from image and run it
-
-docker run --name mysql_cont -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic -p 3306:3306 mysql:5.7.8
-
-OR
-// To start docker container from image
-docker start mysql_cont
-
-
-// exec running container
-docker exec -it mysql_cont mysql -p
-
-password : root
-
- docker exec -it [container_name] bash
- 
- docker-compose up
- 
-./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
-
-
-
-```
-
-
 ## Compiling the CSS
 
 There is a `petclinic.css` in `src/main/resources/static/resources/css`. It was generated from the `petclinic.scss` source, combined with the [Bootstrap](https://getbootstrap.com/) library. If you make changes to the `scss`, or upgrade Bootstrap, you will need to re-compile the CSS resources using the Maven profile "css", i.e. `./mvnw package -P css`. There is no build profile for Gradle to compile the CSS.
